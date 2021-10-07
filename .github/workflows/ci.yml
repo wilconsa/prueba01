@@ -1,0 +1,12 @@
+on: push
+name: Run Tests on Push
+jobs:
+  tests:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Clone & checkout repo to current commit
+        uses: actions/checkout@v1
+      - name: Install Dependencies
+        run: npm install
+      - name: Run tests
+        run: npm test
